@@ -30,12 +30,12 @@
 // |  ESC |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
 // | LGUI |     |     |     |     |     |   |     |     | UP  |     |     |      |
 // |      | BT1 | BT2 | BT3 | BT4 | BT5 |   |BTCLR| LFT | DWN | RGT |     |      |
-//                    | CTRL|     | SPC |   | SPC |     | ALT |
+//                    | CTRL|     | SPC |   | SPC | LWST| ALT |
                         bindings = <
    &kp ESC   &kp N1       &kp N2       &kp N3       &kp N4        &kp N5       &kp N6     &kp N7   &kp N8    &kp N9    &kp N0  &kp BSPC
    &kp LGUI  &trans       &trans       &trans       &trans        &trans       &trans     &trans   &kp UP    &trans    &trans  &trans
    &trans    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4 &bt BT_CLR &kp LEFT &kp DOWN  &kp RIGHT &trans  &trans
-                          	       &kp LCTRL    &trans        &kp SPACE    &kp SPACE  &trans   &kp RALT
+                          	       &kp LCTRL    &trans        &kp SPACE    &kp SPACE  &mo 3    &kp RALT
                         >;
                 };
 
@@ -44,12 +44,26 @@
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
 // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | SPC |     | ALT |
+//                    | GUI | LWST| SPC |   | SPC |     | ALT |
                         bindings = <
    &kp  TAB  &kp EXCL &kp AT &kp HASH  &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
    &kp LCTRL &trans   &trans &trans    &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
    &kp LSHFT &trans   &trans &trans    &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                    	     &kp LCTRL &trans   &kp SPACE   &kp SPACE &trans    &kp RALT
+                    	     &kp LCTRL &mo 3    &kp SPACE   &kp SPACE &trans    &kp RALT
+                        >;
+                };
+                
+                lowest_layer {
+// -----------------------------------------------------------------------------------------
+// |  ESC |     |     |     |     |     |   |     |     |     |     |     |      |
+// |      |     |     |     |     |     |   |     |     |     |     |     |      |
+// |      | BT1 | BT2 | BT3 | BT4 | BT5 |   |BTCLR|     |     |     |     |      |
+//                    | CTRL|     | SPC |   | SPC |     | ALT |
+                        bindings = <
+   &kp ESC   &trans       &trans       &trans       &trans        &trans       &trans     &trans   &trans    &trans    &trans  &trans
+   &trans    &trans       &trans       &trans       &trans        &trans       &trans     &trans   &kp UP    &trans    &trans  &trans
+   &trans    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4 &bt BT_CLR &trans   &trans    &trans    &trans  &trans
+                          	       &kp LCTRL    &trans        &kp SPACE    &kp SPACE  &trans   &kp RALT
                         >;
                 };
         };
